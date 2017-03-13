@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "Ruby, Git"
+date:   2016-03-31 12:07:15 -0400
+categories: webdev
+---
+  <div id = 'summary' class='col-md-12' >
+  <p>Hi there!  Ok, here we go. This post is a bit selfish, and it's a bit more about me trying to document things I've played around with and key concepts/misconceptions I've had with the topics we've covered to date over at Bitmaker (the coding boot camp I'm at!). </p>
+
+  <h3>Git Experiments</h3>
+
+  <p>Ok, so on day 1 we learned about git and github and the genius that is Linus Torvalds. Following this, I got a bit curious and decided to do some experimenting. If you're interested, I've saved my notes at my github: <a href="https://github.com/mokutsu/test_repo"> (Edit: This repo has since been removed, - MO (June 10, 2016))</p>
+
+  <p>Below is the cliffsnotes of git from this experience. In no way is this an extensive test, it was something I just got a bit curious about.</p>
+
+  <p>I find it easiest to think about git as a tracker for a folder. If you initialize the folder, this project folder is now "viewed" by git for changes to its status. New files are noted as untracked, changes need to be staged, and then are ultimately committed as an entry into the logs that record the history in that folder. This brought me to the following questions:</p>
+  <ol>
+  	<li>What happens if I rename files or copy them and delete the original within the folder?</li>
+  	<li>What happens if I move the file outside of the folder, such as into parent directory that contains the project folder? What happens if I move the file back into project folder?</li>
+  	<li>What happens if I make subdirectories within the folder and move files into that subdirectory?</li>
+  </ol>
+  <p>As it turns out, any changes within the project directory (including creation of subdirectories housed within the main project directory) are tracked by git and noted/available to be committed. As soon as files are moved out of this project directory however, the file is no longer visible to git, and cannot be tracked. If I make changes to files while outside of this project directory, git is not able to see this. If i copy the file back into git, ultimately, it starts getting tracked by git again.</p>
+
+  <p>Next steps from here are to further explore merging, branching and testing conflicts between github/local copies, testing merging 2 repos (if that is possible), and conflicts between local copies on 2 different machines.</p>
+
+  <h3>Ruby and Object Oriented Programming</h3>
+
+  <p>We took a few days on the fundamentals of ruby and object oriented programming. Interestingly enough, it took a little while to sink in what "object oriented" really means. Hopefully, this is/was/will be more obvious to you.</p>
+
+  <h5>Classes: Blue Prints, Recipes, Ikea Manuals </h5>
+
+  <p>We've learned that in ruby classes are used as a blue print for making instances of objects. Another way that I like to think about this is that I'm writing an ikea manual for a piece of furniture. The manual sets out the pieces that should be contained in the box, pieces that may be contained in the box depending on what version you purchased, and how to assemble the pieces in the most basic way possible. The instructions for the manual need to be written so that even someone who takes everything completely literally will understand it and be able to use it without ambiguity. The instructions also describe how the furniture should be used (e.g. couch can fold out into bed, rocking chairs can be used like so), and sometimes also includes how it should not be used (e.g. do not stand on table).</p>
+
+  <h5>Object-oriented? Object? Oriented?</h5>
+
+  <p>Traditionally, in online self-learning platforms, the phrase "everything is an object in ruby" is repeated, without explaining what does that even mean? I know that a class is an object, but what does it mean to make a program "oriented"?  Below is a way I tried to justify what this meant to myself.</p>
+
+  <p>To orient a program in any way means (as taken from the  <a href="http://www.merriam-webster.com/dictionary/orient">the merriam-webster dictionary</a>):</p>
+  <ul class="definition-list no-count">
+  	<li>
+  <p class="definition-inner-item">to change or create (something, such as a book or a film) so that it appeals to a particular group of people or is suitable for a particular group of people</p>
+  </li>
+  	<li>
+  <p class="definition-inner-item">to direct (someone) toward a goal</p>
+  </li>
+  	<li>
+  <p class="definition-inner-item">to place (something) in a particular position or direction</p>
+  </li>
+  </ul>
+  &nbsp;
+
+  <p>As I understand then, the program really fits primarily into the first 2 categories. Object-oriented means that the program is created so that it is geared towards objects, and is defined by objects.</p>
+
+  <p>This is where I had my question: Understanding that an object has a state and variable, and Classes are objects, what's the justification for placing all of the code within the Class? Wouldn't it be better to follow the DRY principle and place methods outside of the Class so that different classes need to access the method?</p>
+
+  <p>I thought about this some more and asked around and it seems that the DRY principle is counter balanced by 2 other principles:</p>
+  <ol>
+  	<li>Don't make things accessible if they don't need to be</li>
+  	<li>Make your code readable</li>
+  </ol>
+  <p>Ultimately, I was convinced that methods should be placed within the Class because of these 2 principles, provided that the method where possible.</p>
+
+  <em>Let me know if you have any further thoughts on this!</em>
+
+  <h3>Programming Work Flow</h3>
+
+  <p>Here, we talked about different design philosophies, including waterfall vs. iterative.</p>
+
+<p>  Coming from an ISO9001 company with a fairly well defined quality management system, the different QA/workflow procedures was quite interesting, especially in web development where reaching market first is such a crucial part of business.</p>
+
+  <p>I think that in the coming years, it'll be interesting to see how industry-wide QA standards will develop and fight to stay relevant in an increasingly web-based economy. Recognizing that ISO standards are technically at the corporate level, it'll be interesting to see if industry best practices (e.g. the ruby style guide) become implemented.</p>
+
+  <h3>Testing</h3>
+  <p>Building on yesterday's topic, we learned about testing and debugging today. Reading and writing unit tests was a good way to force us to program in a way that really focused on the inputs and outputs of the program.</p>
+
+  <h3>RailsGirlsTO</h3>
+  <p>Lastly but not least, a few of us decided to check out the RailsGirlsTO event tonight, which was about the presenters in rails. Ultimately, much of the technical topic went a bit over my head. It did however seem to tie in and build a bit on these 2 short Codeacademy videos that I saw earlier this year (<a href="https://youtu.be/e4S8zfLdLgQ">front end side</a> and <a href="https://youtu.be/FTAPjr7vgxE">back end side</a>). I think there were 2 take away messages:</a>
+
+  <ol>
+  	<li>regardless of the complexity of the project and whatever you are working on, readability is key. A big part of this is keeping blocks of code seperate and integrating only where required (i.e. don't make a big single block of code cross-referencing all over the place if you can alternatively make a few medium sized blocks of code instead that are a bit more self-contained)</li>
+  	<li>the local community is incredibly supportive and a great resource! I was genuinely impressed by how friendly/welcoming the group was, in spite of my lack of rails experience.</li>
+  </ol>
+
+  <p>Anyways, that's a wrap for tonight for this blog, now to think about refactoring that mars rover exercise.....maybe....</p>
+
+  <p>Good night, and yeesh that was a long post. Will refactor later...at some point...</p>
+
+<em> First produced on Wordpress in March, 2016 </em>
+</div>

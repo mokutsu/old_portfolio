@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Bugs. Gah."
+date:   2016-04-13 12:07:15 -0400
+categories: webdev
+---
+  <div id = 'summary' class='col-md-12' >
+  Adding onto this last post, in case it wasn't clear, the boot camp has turned up a notch this past week, and it's definitely the start of a long and winding road. Up to this point, I feel like much of the course content was manageable by doing extra prep work and being extra prepared but rails has been a wholly new experience (and quite the kick in the butt!).  Coming from a relatively technical background, it's been very humbling to realize that I can't just break-to-basics-code-my-way through this like we were doing with the fun ruby and sql exercises. I <em>do </em> need to sit down, read the docs, learn the syntax, <em>ask for help and actually listen (the listening part being the hardest part for me personally). </em>
+
+  For example, this past week, I was working on a rails application, and my edit route decided to quit. I spent <em>two hours</em> trying to debug this problem and spinning my wheels. I peeked over at my classmates' screens, made small talk about this stupid error I was having, scratched our heads a bit, and within the many half-hearted suggestions I got, was the answer, though I didn't realize it at the time. I gave up, went home, and sure enough the next morning, found out that because I'd defined my edit path below my object/:id path, the "edit" portion of the url was being recognized as a form of :id.
+
+  Two hours of my life that I will never get back! In a previous life, this would have been two hours that I wouldn't know how to charge on a time sheet, and would have had to eat. Two extra hours I would have had to work to have the minimum 40 chargeable hours. <em>TWO HOURS BECAUSE THE ORDER OF MY ROUTES WAS SET UP WRONG</em>. Not only this, but two hours that I could have saved had I skipped ahead and just used resources instead. The next day, I told my class mate that his suggestion was right, but I was kicking myself for not listening more actively.
+
+  Moving forward, I think I'll actually be using a timer so that I force myself to walk away from a problem if I can't see it within a reasonable amount of time, and actually opening up to people sooner and taking the feedback more seriously!
+
+  Likewise, today, I spent three hours just reading through and inserting comments on my models, views and controllers we'd generated with a class mate, which has honestly been one of the most helpful experiences thus far. I think repetition makes for muscle memory and ability to reproduce, but actually following through each step of the code can be equally helpful (albeit time consuming and tedious at times). As we went through and started identifying things we didn't know, the more we started seeing things we didn't understand. Again, incredibly helpful, but a solid butt kicking none the less.
+
+  Reiterating the point above, DevHub hosted an event tonight titled 'Dear Junior Developer Me'. I was a bit worried that this event would be just repetitious and time I could really be using to better learn rails. However, it was a good opportunity to hear what people had experienced and what their thoughts were. I was impressed by the overall supportiveness of the community and the quality of the discussion. I'm really looking forward to learning more as we move forward!
+
+
+<p><em> First produced on Wordpress in April, 2016 </em></p>
+</div>
