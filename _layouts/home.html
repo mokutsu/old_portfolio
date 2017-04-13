@@ -2,11 +2,36 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home main-flex-container">
 
-  <h1 class="page-heading">Under Construction</h1>
-
-  Come Back Again Soon!
+  <h1 class="page-heading flex-underling">Under Construction</h1>
+  <div class="flex-underling">
+    <div>
+    In the mean time, care to enjoy some disjointedly formatted posts? Or better yet, skip the posts and check out a link at the bottom!<br/>
+    <h2>Posts </h2>
+    <ul>
+      {% for post in site.posts limit:2 %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <p>{{ post.excerpt | truncatewords:20 }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+    <div>
+    <div>
+    <ul class="social-media-list flex-underling">
+      <li class='social-point flex-lackey'>
+        {% include icon-github.html username=site.github_username %}
+      </li>
+      <li class='social-point flex-lackey'>
+        {% include icon-twitter.html username=site.twitter_username %}
+      </li>
+      <li class='social-point flex-lackey'>
+        {% include breezeicons-email.html email=site.email %}
+      </li>
+    </ul>
+  </div>
+  </div>
 
 
 </div>

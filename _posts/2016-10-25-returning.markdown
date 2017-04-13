@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "It's been a while"
+title:  "It's been an even longer while"
 date:   2016-10-25 08:50:15 -0400
 categories: webdev
 ---
 
-Hello reader!
-
-It’s been a while, hasn’t it?  There’s been a lot going on lately, and writing content for this blog has fallen to the side. Neglected, like a cactus plant a friend might have gifted you a while ago, and you left on the window sill so it could enjoy the summer sun light, but then promptly forgot about because it’s been so good on its own, and are only remembering now that we’re talking about neglected things… *be right back!*
+Hello reader! It’s been a while, hasn’t it?  There’s been a lot going on lately, and writing content for this blog has fallen to the side. Neglected, like a cactus plant a friend might have gifted you a while ago, and you left on the window sill so it could enjoy the summer sun light, but then promptly forgot about because it’s been so good on its own, and are only remembering now that we’re talking about neglected things… *be right back!*
 
 Anyways, getting back on track, I’ll be breaking this up into multiple sections, since there is so much that i want to write, and no one wants to read a long, winding, mess of an article (myself included). Below are some of the proposed topics:
 
