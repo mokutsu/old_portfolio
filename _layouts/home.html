@@ -3,12 +3,38 @@ layout: default
 ---
 
 <div class="home main-flex-container">
-
-  <h1 class="page-heading flex-underling">Under Construction</h1>
-  <div class="flex-underling">
-    <div>
-    In the mean time, care to enjoy some disjointedly formatted posts? Or better yet, skip the posts and check out a link at the bottom!<br/>
-    <h2>Posts </h2>
+  <header>
+    <h1>Hello! Dummy text here!</h1>
+    <p>ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam numquam, tempore, minima facilis autem! Tempore culpa laboriosam eligendi perferendis quae ad a cupiditate autem, debitis necessitatibus itaque, fugit id.
+  </header>
+  <section>
+  <ul class='skillz-list'>
+    <li class='li-skills'><h3 class='h3-skills'>SKILL 1</h3>
+      <ul class='subskills'>
+        <li>ipsum Lorem ipsum dolor sit amet, </li>
+        <li>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</li>
+        <li> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</li>
+      </ul>
+    </li>
+    <li class='li-skills'><h3 class='h3-skills'>SKILL 2</h3>
+      <ul class='subskills'>
+        <li>ipsum Lorem ipsum dolor sit amet, </li>
+        <li>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</li>
+        <li> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</li>
+      </ul>
+    </li>
+    <li class='li-skills'><h3 class='h3-skills'>SKILL 3</h3>
+      <ul class='subskills'>
+        <li>ipsum Lorem ipsum dolor sit amet, </li>
+        <li>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</li>
+        <li> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section id='rambles'>
+    <h2>Ramblings</h2>
+    <p>If you like reading people ramble on, are you in for a treat! Below are some of my older blog posts.</p>
     <ul>
       {% for post in site.posts limit:2 %}
         <li>
@@ -17,9 +43,10 @@ layout: default
         </li>
       {% endfor %}
     </ul>
-    <div>
-    <div>
-    <ul class="social-media-list flex-underling">
+  </section>
+  <section id='contact'>
+    <div>Anyways, if you enjoyed, let's get in touch!
+    <ul class="social-cruft flex-underling">
       <li class='social-point flex-lackey'>
         {% include icon-github.html username=site.github_username %}
       </li>
@@ -28,10 +55,9 @@ layout: default
       </li>
       <li class='social-point flex-lackey'>
         {% include breezeicons-email.html email=site.email %}
+        <!-- note: icon's broken should fix -->
       </li>
     </ul>
   </div>
-  </div>
-
-
+</section>
 </div>
