@@ -1,63 +1,99 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+    <canvas id='jsCanvas'></canvas>
+    <a href='https://www.linkedin.com/in/mokutsu/'>
+    <h1 style="position:absolute;float:left;top:50px; color:white;font-family:Helvetica;padding-left: 30px;"> under construction.</h1></h1>
+		<script src="js/three.js"></script>
+		<script>
+      var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('jsCanvas'), antialias: true});
+      renderer.setClearColor(0x000000);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
 
-<div class="home main-flex-container">
-  <header>
-    <h1>Hello! Dummy text here!</h1>
-    <p>ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam numquam, tempore, minima facilis autem! Tempore culpa laboriosam eligendi perferendis quae ad a cupiditate autem, debitis necessitatibus itaque, fugit id.
-  </header>
-  <section>
-  <ul class='skillz-list'>
-    <li class='li-skills'><h3 class='h3-skills'>SKILL 1</h3>
-      <ul class='subskills'>
-        <li>ipsum Lorem ipsum dolor sit amet, </li>
-        <li>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</li>
-        <li> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</li>
-      </ul>
-    </li>
-    <li class='li-skills'><h3 class='h3-skills'>SKILL 2</h3>
-      <ul class='subskills'>
-        <li>ipsum Lorem ipsum dolor sit amet, </li>
-        <li>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</li>
-        <li> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</li>
-      </ul>
-    </li>
-    <li class='li-skills'><h3 class='h3-skills'>SKILL 3</h3>
-      <ul class='subskills'>
-        <li>ipsum Lorem ipsum dolor sit amet, </li>
-        <li>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</li>
-        <li> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</li>
-      </ul>
-    </li>
-  </ul>
-</section>
-<section id='rambles'>
-    <h2>Ramblings</h2>
-    <p>If you like reading people ramble on, are you in for a treat! Below are some of my older blog posts.</p>
-    <ul>
-      {% for post in site.posts limit:2 %}
-        <li>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-          <p>{{ post.excerpt | truncatewords:20 }}</p>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-  <section id='contact'>
-    <div>Anyways, if you enjoyed, let's get in touch!
-    <ul class="social-cruft flex-underling">
-      <li class='social-point flex-lackey'>
-        {% include icon-github.html username=site.github_username %}
-      </li>
-      <li class='social-point flex-lackey'>
-        {% include icon-twitter.html username=site.twitter_username %}
-      </li>
-      <li class='social-point flex-lackey'>
-        {% include breezeicons-email.html email=site.email %}
-        <!-- note: icon's broken should fix -->
-      </li>
-    </ul>
-  </div>
-</section>
-</div>
+      //CAMERA
+      var camera = new
+      // field of view, aspect ratio
+      THREE.PerspectiveCamera(
+        35,
+        window.innerWidth / window.innerHeight,
+        300,
+        10000
+      );
+
+      //SCENE
+      var scene = new THREE.Scene();
+
+      //LIGHTS
+      var light = new THREE.AmbientLight(0xccccff, 0.7);
+      scene.add(light);
+      scene.add(light);
+      var light1 = new THREE.PointLight(0x9933ff, .5);
+      scene.add(light1);
+
+
+      // material
+      // var material = new THREE.MeshBasicMaterial({
+      //   color: 0x0000ff,
+      //   transparent: true,
+      //   opacity: 0.8,
+      //   wireframe: true,
+      // });
+      cubes = [];
+      for (let i=0; i<100; i++) {
+        var material = new THREE.MeshPhongMaterial({
+          color: 0xac99ff,
+          specular: 0x33eeff,
+          shininess: 90
+        });
+        // GEOMETRY
+        var dimension = 10 + 90*Math.random();
+        var geometry = new THREE.BoxGeometry(dimension, dimension, dimension);
+        var mesh = new THREE.Mesh(geometry, material);
+        mesh.position.z = -700 - 500*Math.random();
+        mesh.position.x = -window.innerWidth+2*window.innerWidth*Math.random();
+        mesh.position.y = window.innerHeight*Math.random();
+        scene.add(mesh);
+        cubes.push(mesh);
+      }
+      //
+      // var geometry2 = new THREE.SphereGeometry(50, 20, 20);
+      // var mesh2 = new THREE.Mesh(geometry2, material);
+      // mesh2.position.z = -1000;
+      // mesh2.position.x = 100;
+      // scene.add(mesh2);
+
+      // var geometry3 = new THREE.PlaneGeometry(10000,10000,100,100);
+      // var mesh3 = new THREE.Mesh(geometry3, material);
+      // var mesh3.position.x = -90 * Math.PI / 180;
+      //
+      // mesh3.rotation.x = -90 * Math.PI / 180;
+      // mesh3.position.y = -100;
+      // scene.add(mesh3);
+
+
+
+      render();
+
+      function render() {
+        cubes.forEach(function(mesh) {
+          var direction = new THREE.Vector3(Math.random(), -Math.random(), -Math.random());
+          mesh.rotation.x += 0.005;
+          mesh.rotation.y += 0.01;
+          mesh.position.add(direction);
+        })
+        renderer.render(scene, camera);
+        requestAnimationFrame(render);
+      }
+
+  	</script>
+	</body>
+</html>

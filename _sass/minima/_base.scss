@@ -39,15 +39,7 @@ body {
   box-shadow: 1px 1px 4px 1px #ccc;
 }
 
-.social-point {
-  display: inline-block;
-  float: left;
-  min-height: 40px;
-  padding: 0 0;
-  margin: 0 0;
-}
-
-header {
+header, .skills {
   border: 1px #eee solid;
   box-shadow: 1px 1px 4px 1px #ccc;
   padding: 10px 10px;
@@ -68,14 +60,20 @@ header {
    justify-content: space-between;
 }
 #rambles, #contact {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   border: 1px #eee solid;
   box-shadow: 1px 1px 4px 1px #ccc;
   padding: 10px 10px;
   margin: 15px 10px;
-  width: 90%;
 }
 
+.ramble-post, .social-point {
+  border: 1px #eee solid;
+  box-shadow: 1px 1px 4px 1px #ccc;
+  margin: 15px 10px;
+  padding: 10px 10px;
+}
 ul {
   margin: 0 0;
   padding: 0 0;
