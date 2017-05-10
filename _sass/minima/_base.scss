@@ -1,12 +1,24 @@
 /**
 * Flex Containers
 ***/
-li {
-  list-style: none;
+
+$min-font: 16;
+$max-font: 54;
+$max-screen: 800;
+$min-screen: 400;
+body {
+  box-sizing: border-box;
+  font-size: calc( 16px + (200 - 16) * (100vw - 400px) / (800 - 400));
 }
 
-body {
-  background-color: rgba(228, 236, 239, 0.8);
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.2em;
+}
+p, div, ul, ol, li {
+  font-size: 1em;
 }
 
 .home {
@@ -17,65 +29,59 @@ body {
 
 p, li, ul, ol, section, body {
   font-family: 'Raleway';
-  color: #444;
+  color: #666;
 }
 
 
 h1, h2, h3 {
   font-family: 'Cardo', 'Merriweather', 'Crimson+Text', 'Lora', 'Raleway', 'Roboto', serif;
   letter-spacing: 1px;
-    color: #8c0052;
+    color: #666;
 }
 
-
-body {
-  box-sizing: border-box;
-}
-.home {
-  width: 66%;
-  height: 66%;
-  margin: 0 auto;
-  border: 1px #eee solid;
-  box-shadow: 1px 1px 4px 1px #ccc;
-}
-
-header, .skills {
-  border: 1px #eee solid;
-  box-shadow: 1px 1px 4px 1px #ccc;
-  padding: 10px 10px;
-  margin: 15px 10px;
-}
-.li-skills {
-  border: 1px #eee solid;
-  box-shadow: 1px 1px 4px 1px #ccc;
-  padding: 10px 10px;
-  width: 25%;
-  min-height: 200px;
-  text-align: center;
-
-}
-.skillz-list, .social-cruft {
-  margin: 15px 10px;
-   display: flex;
-   justify-content: space-between;
-}
-#rambles, #contact {
-  display: flex;
-  justify-content: space-between;
-  border: 1px #eee solid;
-  box-shadow: 1px 1px 4px 1px #ccc;
-  padding: 10px 10px;
-  margin: 15px 10px;
+.squiggle-container{
+  .test-circle {
+    // margin: 50px;
+    cy: 50%;
+    r: 70px;
+    stroke: #CCC;
+    stroke-width: 3;
+  }
+  .svg-div{
+    width: 200px;
+    height: 200px;
+    float: left;
+  }
+  #test-1 {
+    fill: rgba(0, 255, 252, 0.33);
+    cx: 50%;
+  }
+  #test-2 {
+    fill: rgba(255, 74, 193, 0.82);
+    cx: 50%;
+  }
+  #test-3 {
+    fill: rgba(255, 239, 74, 0.82);
+    cx: 50%;
+  }
 }
 
-.ramble-post, .social-point {
-  border: 1px #eee solid;
-  box-shadow: 1px 1px 4px 1px #ccc;
-  margin: 15px 10px;
-  padding: 10px 10px;
+.test-circle, .msg {
+    // border: 1px solid #48484A;
+    // font-size: 40px;
+    animation: fadeInLoad 5s;
 }
-ul {
-  margin: 0 0;
-  padding: 0 0;
-  -webkit-padding-start: 0;
+@keyframes fadeInLoad {
+    from {
+        opacity:0;
+        r: 0px;
+    }
+    to {
+        opacity:1;
+        r: 70px;
+    }
+}
+
+.test-circle:hover {
+  stroke-width: 10px;
 }
