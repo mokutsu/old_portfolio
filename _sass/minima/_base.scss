@@ -1,87 +1,134 @@
-/**
-* Flex Containers
-***/
+// ============ FLUID FONT SIZING VARS ============
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+$mod_1: 1.2; // mobile
+$mod_2: 1.5; // desktop
+$teeny_tiny_space: 0.02em;
+$darkest: rgba(0, 0, 0, 0.9);
+$darker: rgba(0, 0, 0, 0.7);
+$medium: rgba(0, 0, 0, 0.6);
+$light: rgba(0, 0, 0, 0.2);
+$purplegrey: rgba(70, 30, 70, 0.8);
 
-$min-font: 16;
-$max-font: 54;
-$max-screen: 800;
-$min-screen: 400;
-body {
-  box-sizing: border-box;
-  font-size: calc( 16px + (200 - 16) * (100vw - 400px) / (800 - 400));
+
+// ============ GLOBALS  ============
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  font-family: $base-font-family;
+  letter-spacing: $teeny_tiny_space;
+  color: $medium;
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
 }
+
 h2 {
-  font-size: 1.2em;
+  font-size: $mod_1*$mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
 }
-p, div, ul, ol, li {
-  font-size: 1em;
-}
-
-.home {
-  background-color: white;
-  border: 5px solid #BBA9B3;
-  padding: 15px;
+h3 {
+  font-size: $mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
 }
 
-p, li, ul, ol, section, body {
-  font-family: 'Raleway';
-  color: #666;
+body {
+  box-sizing: border-box;
 }
 
-
-h1, h2, h3 {
-  font-family: 'Cardo', 'Merriweather', 'Crimson+Text', 'Lora', 'Raleway', 'Roboto', serif;
-  letter-spacing: 1px;
-    color: #666;
+p, div, ul, ol, li, section{
+  font-size: $mod_1*$mod_1 *1rem;
+  color: $medium;
 }
 
-.squiggle-container{
-  .test-circle {
-    // margin: 50px;
-    cy: 50%;
-    r: 70px;
-    stroke: #CCC;
-    stroke-width: 3;
+a {
+  font-size: $mod_1*$mod_1 *1rem;
+  text-decoration: none;
+  color: #3e3a46;
+  padding-bottom: $teeny_tiny_space;
+  .link-text {
+    border-bottom: 0.01em solid $purplegrey;
   }
-  .svg-div{
-    width: 200px;
-    height: 200px;
-    float: left;
+}
+a:hover {
+  color: $darker;
+  padding-bottom: 0;
+  .link-text {
+    border-bottom: $teeny_tiny_space solid $purplegrey;
+  }
+}
+
+//  ============ NAV  ============
+nav {
+  .nav-link {
+    border-style: 2em solid $light;
+    width: 10rem;
+    line-height: 10rem;
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    padding: 0.05rem;
+    -webkit-animation: fadeInLoad 3s forwards;
+    animation: fadeInLoad 3s forwards;
+  }
+  .link-text {
+    opacity: 0;
+    -webkit-animation: fadeInText 1s forwards;
+    -webkit-animation-delay: 3s;
+    animation: fadeInText 1s forwards;
+    animation-delay: 3s;
   }
   #test-1 {
-    fill: rgba(0, 255, 252, 0.33);
-    cx: 50%;
+    background-color: rgba(0, 255, 252, 0.33);
   }
   #test-2 {
-    fill: rgba(255, 74, 193, 0.82);
-    cx: 50%;
+    background-color: rgba(255, 74, 193, 0.82);
   }
   #test-3 {
-    fill: rgba(255, 239, 74, 0.82);
-    cx: 50%;
+    background-color: rgba(255, 239, 74, 0.82);
   }
 }
 
-.test-circle, .msg {
-    // border: 1px solid #48484A;
-    // font-size: 40px;
-    animation: fadeInLoad 5s;
-}
+
 @keyframes fadeInLoad {
-    from {
-        opacity:0;
-        r: 0px;
+    0% {
+        opacity: 0;
+        width: 0;
+        transform: scaleY(0);
     }
-    to {
+    50% {
+      width: 10rem;
+      transform: scaleY(.1);
+    }
+    100% {
         opacity:1;
-        r: 70px;
+        min-height: 10rem;
+        transform: scaleY(1);
     }
 }
 
-.test-circle:hover {
-  stroke-width: 10px;
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+.nav-link:hover {
+  border: 0.05rem solid $light;
+  padding: 0;
+  color: $purplegrey;
+}
+
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }
