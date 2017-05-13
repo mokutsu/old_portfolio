@@ -3,9 +3,10 @@ $min_width: 320px;
 $max_width: 1200px;
 $min_font: 16px;
 $max_font: 24px;
-$mod_1: 1.2; // mobile
+$mod_1: 1.3; // mobile
 $mod_2: 1.5; // desktop
 $teeny_tiny_space: 0.02em;
+$teensy_space: 0.08em;
 $darkest: rgba(0, 0, 0, 0.9);
 $darker: rgba(0, 0, 0, 0.7);
 $medium: rgba(0, 0, 0, 0.6);
@@ -37,6 +38,15 @@ h3 {
 
 body {
   box-sizing: border-box;
+  background:
+  linear-gradient(
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.75)
+  ),url('../img/test.jpg');
+  background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
 }
 
 p, div, ul, ol, li, section{
@@ -61,9 +71,22 @@ a:hover {
   }
 }
 
+//  ============ HEADER  =========
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30vh;
+}
 //  ============ NAV  ============
 nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .nav-link {
+    margin: $teensy_space;
     border-style: 2em solid $light;
     width: 10rem;
     line-height: 10rem;
@@ -77,9 +100,9 @@ nav {
   .link-text {
     opacity: 0;
     -webkit-animation: fadeInText 1s forwards;
-    -webkit-animation-delay: 3s;
+    -webkit-animation-delay: 2s;
     animation: fadeInText 1s forwards;
-    animation-delay: 3s;
+    animation-delay: 2s;
   }
   #test-1 {
     background-color: rgba(0, 255, 252, 0.33);
@@ -122,6 +145,7 @@ nav {
 }
 
 .nav-link:hover {
+  opacity: 1;
   border: 0.05rem solid $light;
   padding: 0;
   color: $purplegrey;
@@ -132,3 +156,10 @@ nav {
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
 }
+
+
+// ========= main ========
+// main {
+//   background-image: url('../../img/test.jpg') grayscale(100%);
+//   // filter: ;
+// }
