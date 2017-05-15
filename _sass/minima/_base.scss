@@ -6,7 +6,7 @@ $max_font: 24px;
 $mod_1: 1.3; // mobile
 $mod_2: 1.5; // desktop
 $teeny_tiny_space: 0.02em;
-$teensy_space: 0.08em;
+$teensy_space: 0.15em;
 $darkest: rgba(0, 0, 0, 0.9);
 $darker: rgba(0, 0, 0, 0.7);
 $medium: rgba(0, 0, 0, 0.6);
@@ -47,6 +47,8 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 p, div, ul, ol, li, section{
