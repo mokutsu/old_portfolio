@@ -4,12 +4,12 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
+$base-font-family: 'Raleway', 'Roboto', sans-serif;
+$fancy-fonts: 'Megrim', 'Raleway', sans-serif;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
-
 $spacing-unit:     30px;
 
 $text-color:       #111;
