@@ -18,12 +18,13 @@
   var scene = new THREE.Scene();
 
   //LIGHTS
-  // var light = new THREE.AmbientLight(0xccccff, 0.7);
-  // scene.add(light);
+  var light = new THREE.DirectionalLight( 0xffffbb, 0.5 )
+// scene.add( light );
+  scene.add(light);
   // scene.add(light);
   var light1 = new THREE.PointLight(0x9933ff, .8);
   scene.add(light1);
-  // var light2 = new THREE.SpotLight(0xffaaff);
+  // var light2 = new THREE.AmbientLight(0xffaaff, 1);
   // scene.add(light2);
 
 
@@ -41,7 +42,7 @@
     var material = new THREE.MeshStandardMaterial({
       color: 0xac99ff,
       metalness: 0.9,
-      roughness: 0.1
+      roughness: 0.2
     });
     // GEOMETRY
     var dimension = 10 + 90*Math.random();

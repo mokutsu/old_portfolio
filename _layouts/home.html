@@ -4,12 +4,26 @@
   {% include head.html %}
 
   <body>
+        <nav class='nav nav-onload'>
+          <ul>
+            <li><a class='navlink'href=#>Home</a></li>
+          <li><a class='navlink' href=#>about</a></li>
+          <li><a class='navlink' href=#>projects</a></li>
+          <li><a class='navlink' href=#>contact</a></li>
+        </nav>
+
   <div class='img-container'>
-  <img class='hero-img' src='img/davisville2.jpg' alt='background image of train station'>
+    <!-- <picture>  Picture tags don't seem to be working ... hmm
+       <source
+          srcset="images/davisville2.png">
+       <img src="images/davisville2.png"
+       alt="a cute kitten">
+    </picture> -->
+  <img class='hero-img' src='img/davisville_midres-compressor.jpg' alt='background image of davisville ttc tracks'>
 </div>
   <header>
-    <div class="svg-container">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" >
+    <div class="svg-container" tabindex="0" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <g>
           <polyline
             class='shape'
@@ -19,34 +33,29 @@
             points="2,0 4,96 96,99 98,9 7,2 0,101 101,97 100,0 1,5 3,102 102,96 101,8 0,3 2,97 97,97 100,2 7,3 4,98 93,96 102,8 2,3 5,100 100,97 101,5 5,3 0,101 101,100 99,0 3,5 4,100 100,103 97,3 2,5 6,102 102,96 96,8 4,0 3,101 101,98 97,3 3,2 2,99 99,101 96,2 3,5 6,97 97,96 97,3 1,0 5,96 96,101 100,5 3,8 1,97 97,102 103,3 3,2 4,96 96,97 96,3" fill='none'/>
         </g>
       </svg>
-      <div class='text' fill="blue"><h1>Welcome</h1></div>
+          <text stroke="white" text-anchor="middle" class='text'>Welcome</text>
     </div>
   </header>
-
-
-    <main class="page-content" aria-label="Content">
-      <nav class="wrapper">
-          <a href='#' class='nav-link' id='test-1'>
-            <span class='link-text'>Projects</span>
-            <!-- <p>(What I do)</p> -->
-        </a>
-        <a href='#' class='nav-link' id='test-2'>
-          <span class='link-text'>
-            Blog
-          </span>
-          <!-- <p>(that time When ...)</p> -->
-        </a>
-        <a href='#' class='nav-link' id='test-3'>
-          <span class='link-text'>
-            About
-          </span>
-          <!-- <p>(a bit about WHO)</p> -->
-        </a>
-      </nav>
-    </main>
 
     <!-- {% include footer.html %} -->
   </div>
   </body>
+   <script>
+   // on mobile:
+     let header = document.querySelector('header');
+      let welcomeBtn = document.querySelector('.svg-container');
+      let SVGs = document.querySelector('svg');
+      let welcomeText = document.querySelector('text');
+      let nav = document.querySelector('nav');
+      welcomeBtn.addEventListener('click', function(){
+        SVGs.classList.add('fadeOut');
+        welcomeText.classList.add('fadeOut');
+        welcomeBtn.classList.add('fadeOut');
+        welcomeBtn.classList.add('nav-onload');
+        header.classList.add('moveWelcomeBoxLeft');
+          header.appendChild(nav);
+          nav.classList.add('nav-display');
+      })
 
+   </script>
 </html>
