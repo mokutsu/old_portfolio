@@ -1,3 +1,6 @@
+// sources:
+// https://www.youtube.com/playlist?list=PL08jItIqOb2qyMOhtEUoLh100KpccQiRf
+// http://i.imgur.com/rCr9A.png
 
   var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('jsCanvas'), antialias: true});
   renderer.setClearColor(0x000000);

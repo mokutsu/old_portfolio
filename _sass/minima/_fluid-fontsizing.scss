@@ -1,3 +1,10 @@
+// giving credit where it's due:
+// http://fitc.ca/presentation/newadventures/
+// https://www.smashingmagazine.com/2016/05/fluid-typography/
+
+
+// given a minimum viewport width, maximum viewport width, minimum font size, maximum font size, if all the 4 units are the same, use the min font size by default. If we're greater than the minimum screen size to start scaling, start scaling up the font size. If we're greater than the maximum screen size, use the max font size.
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
@@ -11,9 +18,12 @@
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
       font-size: $min-font-size;
+      //
       @media screen and (min-width: $min-vw) {
+        // base-size + (scaling rate)
         font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
+      // use the max font size if the vw is greater than the min-width
       @media screen and (min-width: $max-vw) {
         font-size: $max-font-size;
       }
@@ -23,7 +33,7 @@
 
 
 
-
+// now use the rule above and apply it as per below to set our base font size
 @media screen and (min-width: 25em){
   html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
 }
