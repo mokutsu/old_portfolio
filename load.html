@@ -1,0 +1,49 @@
+---
+title: project
+permalink: load.html
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body style="background-color:black;">
+
+  <header>
+    <div class='header-contents'>
+    <div class="svg-container" tabindex="0" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <g>
+            <path d="M5,4 C38,63 41,93 76,3 Z" />
+        </g>
+      </svg>
+      </div>
+      <div class='welcome'>
+      <text stroke="white" text-anchor="middle" class='welcome-text'>X</text>
+      </div>
+  </div>
+  </header>
+
+    <!-- {% include footer.html %} -->
+  </div>
+  </body>
+   <script>
+   // on mobile:
+     let header = document.querySelector('header');
+      let welcomeBtn = document.querySelector('.svg-container');
+      let SVGs = document.querySelector('svg');
+      let welcomeText = document.querySelector('text');
+      let nav = document.querySelector('nav');
+      welcomeBtn.addEventListener('click', function(){
+        SVGs.classList.add('fadeOut');
+        welcomeText.classList.add('fadeOut');
+        welcomeBtn.classList.add('fadeOut');
+        welcomeBtn.classList.add('nav-onload');
+        header.classList.add('moveWelcomeBoxLeft');
+          header.appendChild(nav);
+          nav.classList.add('nav-display');
+      })
+
+   </script>
+</html>
