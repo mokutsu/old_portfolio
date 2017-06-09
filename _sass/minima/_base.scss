@@ -24,10 +24,6 @@ html {
   color: grey;
 }
 
-// .background {
-//   filter: blur(5px);
-// }
-
 h2 {
   font-size: $mod_1*$mod_1*$mod_1 *1rem;
 }
@@ -39,28 +35,10 @@ body {
   box-sizing: border-box;
   // background-size: 100%;
   // background-repeat: no-repeat;
-  // min-height: 100vh;
-  // width: 100vw;
+  min-height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
-}
-.image-container {
-  overflow: hidden;
-}
-.hero-img {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  width: 100%;
-  display: block;
-  z-index: -1;
-  filter: saturate(30%) brightness(30%);
-
-}
-.background {
-  z-index: 1;
 }
 p, div, ul, ol, li, section{
   font-size: $mod_1*$mod_1 *1rem;
@@ -85,242 +63,57 @@ a:hover {
 
 //  ============ HEADER  =========
 header {
+  width: 100vw;
+  height: 100vh;
+  background-color: #222266;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 30vh;
-  color: white;
-  // =========== svg ===============
-  .svg-container {
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-    top: 50%;
+  justify-content: center;
+  .header-contents {
+    height: 70%;
     width: 70%;
-    border: 1px solid #48d1d8;
-      .shape {
-        -webkit-animation: 25s draw linear infinite;
-        animation: 25s draw linear infinite;
-      }
+    position: relative;
+  // =========== svg ===============
+    .svg-container, .welcome{
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .svg-container {
+      border: 1px solid #48d1d8;
       svg{
         width:100%;
         height:100%;
         stroke: #48d1d8;
         stroke-width: 0.005rem;
-      }
-      text {
-        font-family: $fancy_fonts;
-        transition: visibility 0s 2s, opacity 2s linear;
-        top:40%;
-        font-size: $mod_2*$mod_2*$mod_2 *1rem;
-        height: 100%;
-        width: 100%;
-        color: #fff;
-        position: absolute;
-        text-align: center;
+        .shape {
+          -webkit-animation: 25s draw linear infinite;
+          animation: 25s draw linear infinite;
+        }
       }
     }
-
-  @keyframes draw {
-    0% {
-      stroke-dasharray: 1 6;
-      stroke-dashoffset: 400%;
-      stroke-linecap: round;
+    .welcome .welcome-text {
+      font-family: $fancy_fonts;
+      transition: visibility 0s 2s, opacity 2s linear;
+      font-size: $mod_2*$mod_2*$mod_2 *1rem;
     }
-    100% {
-      stroke-dasharray: 1 6;
-      stroke-dashoffset: 0;
-      stroke-linecap: round;
-    }
-  }
-
-  .svg-container:hover {
-    .shape {
-      -webkit-animation: 90s draw linear infinite;
-      animation: 90s draw linear infinite;
-    }
-    .text {
-      text-decoration: underline;
-    }
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor:pointer;
-  }
-  .moveWelcomeBoxLeft {
-    justify-content: left;
-    display: inline-block;
-    height: 100vh;
-    width: inherit;
-    padding: 0 1em;
-    transition: justify-content 2s linear width 2s linear height 2s linear;
-    margin-left: 0px;
-    border-right: 1px solid #48d1d8;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-
-}
-
-
-  nav {
-    margin-top: 10vh;
-    li {
-      list-style: none;
-      margin-bottom: 1rem;
-    }
-    li:hover {
-      border-bottom: 1px solid #48d1d8;
-      margin-bottom: calc(1rem - 1px);
-    }
-    ul {
-      padding: inherit;
-    }
-    .nav-link {
-      margin-bottom: 1rem;
-    }
-    .nav-link:hover {
-      text-decoration: underline;
-    }
-  }
-  .nav-onload {
-    display: none;
-  }
-
-  .nav-display {
-    display: block;
-    transition: display 1s linear;
-  }
-
-//  ============ NAV  ============
-nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-flex-wrap: wrap;
-  .nav-link {
-    margin: $teensy_space;
-    border-style: 2em solid $darkgrey;
-    flex-basis: 30%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    -webkit-animation: fadeInLoad 3s forwards;
-    animation: fadeInLoad 3s forwards;
-    box-shadow: $teensy_space $teensy_space $teensy_space #333;
-    box-sizing: border-box;
-    align-items: center;
-    display: none;
-  }
-  .link-text {
-    opacity: 0;
-    -webkit-animation: fadeInText 1s forwards;
-    -webkit-animation-delay: 2s;
-    animation: fadeInText 1s forwards;
-    animation-delay: 2s;
-  }
-  #test-1 {
-    background-color: $lightpink;
-  }
-  #test-2 {
-    background-color: $lightblue;
-  }
-  #test-3 {
-    background-color: $lightyellow;
   }
 }
 
-
-@keyframes fadeInLoad {
-    0% {
-        visibility: hidden;
-        display: none;
-        opacity: 0;
-        width: 0;
-        transform: scaleY(0);
-        box-shadow: none;
-        background: none;
-    }
-    50% {
-      width: 10rem;
-      transform: scaleY(.1);
-      box-shadow: none;
-    }
-    100% {
-      display: block;
-        visibility: visible;
-        opacity:0.93;
-        min-height: 10rem;
-        transform: scaleY(1);
-        box-shadow: 1px 1px 2px #333;
-    }
-}
-
-@keyframes fadeInText {
-    from {
-        opacity: 0;
-        transform: scaleY(0);
-    }
-    to {
-        opacity: 1;
-        transform: scaleY(1);
-    }
-}
-
-@keyframes fadeInColourText {
+@keyframes draw {
   0% {
-    opacity: 0;
+    stroke-dasharray: 1 6;
+    stroke-dashoffset: 400%;
+    stroke-linecap: round;
   }
-  20% {
-    opacity: 0.5;
-    color: $lightpink;
+  100% {
+    stroke-dasharray: 1 6;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
   }
-  40% {
-    opacity: 0.8;
-    color: $lightblue;
-  }
-  60% {
-    opacity: 1;
-    color: #fde6bb;
-  }
-  80% {
-    color: white;
-  }
-}
-@keyframes colorSwitch {
-  @keyframes fadeInColourText {
-    0% {
-      color: white;
-    }
-    30% {
-      color: $lightpink;
-    }
-    60% {
-      opacity: 0.8;
-      color: $lightblue;
-    }
-    90% {
-      opacity: 1;
-      color: #fde6bb;
-    }
-  }
-}
-
-.nav-link:hover {
-  opacity: 1;
-  border: 0.05rem solid $darkgrey;
-  padding: 0;
-  color: $darkergrey;
-}
-
-.fadeOut {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
-}
-
-.fadeIn {
-    background: red;
-    -webkit-animation: fadeInLoad 3s forwards;
-    animation: fadeInLoad 3s forwards;
 }
