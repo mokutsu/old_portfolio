@@ -7,6 +7,7 @@
 
   <header>
     <div class='header-contents'>
+    <a href='#welcome'>
     <div class="svg-container" tabindex="0" >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <g>
@@ -20,30 +21,30 @@
       </svg>
       </div>
       <div class='welcome'>
-      <text stroke="white" text-anchor="middle" class='welcome-text'>Welcome</text>
+        <text stroke="white" text-anchor="middle" class='welcome-text'>Welcome</text>
       </div>
-  </div>
+    </a>
+    </div>
   </header>
 
     <!-- {% include footer.html %} -->
   </div>
   </body>
    <script>
-   // on mobile:
-     let header = document.querySelector('header');
-      let welcomeBtn = document.querySelector('.svg-container');
-      let SVGs = document.querySelector('svg');
-      let welcomeText = document.querySelector('text');
-      let nav = document.querySelector('nav');
-      welcomeBtn.addEventListener('click', function(){
-        SVGs.classList.add('fadeOut');
-        welcomeText.classList.add('fadeOut');
-        welcomeBtn.classList.add('fadeOut');
-        welcomeBtn.classList.add('nav-onload');
-        header.classList.add('moveWelcomeBoxLeft');
-          header.appendChild(nav);
-          nav.classList.add('nav-display');
-      })
+    // headerbox.classList.add('shift-left');
+    const header = document.querySelector('.header-contents');
 
+    header.addEventListener('click', function(){
+   header.classList.add('shift-left');
+    this.style.width = '10%'
+    this.style.height = '100%';
+    this.style.marginLeft = '0';
+    svgAnimation = document.querySelector('svg');
+    svgAnimation.style.opacity = '0';
+    welcomeText = document.querySelector('.welcome');
+    welcomeText.style.opacity = '0';
+    // this.appendChild()
+
+  }, false );
    </script>
 </html>

@@ -1,0 +1,88 @@
+//  ============ HEADER  =========
+header {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222266;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    .header-contents {
+      height: 70%;
+      width: 70%;
+      position: relative;
+      margin-left: 15%;
+    // =========== svg ===============
+      a {
+      .svg-container, .welcome{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .svg-container {
+        border: 1px solid #48d1d8;
+        svg {
+          width:100%;
+          height:100%;
+          stroke: #48d1d8;
+          stroke-width: 0.005rem;
+          .shape {
+            -webkit-animation: 5s draw linear infinite;
+            animation: 5s draw linear infinite;
+          }
+        }
+      }
+      .welcome .welcome-text {
+        font-family: $fancy_fonts;
+        transition: visibility 0s 2s, opacity 2s linear;
+        font-size: $mod_2*$mod_2*$mod_2 *1rem;
+        padding-bottom: 0.1rem;
+      }
+    }
+  }
+}
+
+.header-contents:hover {
+  // background-color: green;
+  .svg-container {
+    // background-color: pink;
+    .shape {
+      background-color: pink;
+      -webkit-animation: 90s draw linear infinite;
+      animation: 90s draw linear infinite;
+    }
+  }
+  .welcome-text {
+    padding-bottom: 0;
+    border-bottom: 0.1rem solid white;
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 1 16;
+    stroke-dashoffset: 400%;
+    stroke-linecap: round;
+  }
+  100% {
+    stroke-dasharray: 1 16;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+  }
+}
+
+
+.shift-left {
+  width: 30%;
+  height: 100%;
+  // justify-content: left;
+  transition:         width 500ms ease, height 500ms ease, margin-left 500ms ease;
+  -moz-transition:    width 500ms ease, height 500ms ease, margin-left 500ms ease;
+  -ms-transition:     width 500ms ease, height 500ms ease, margin-left 500ms ease;
+  -o-transition:      width 500ms ease, height 500ms ease, margin-left 500ms ease;
+  -webkit-transition: width 500ms ease, height 500ms ease, margin-left 500ms ease;
+}
