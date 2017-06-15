@@ -6,8 +6,17 @@
   <body style="background-color:black;">
 
   <header>
+    <nav>
+      <!-- <button> > </button> -->
+      <ul class='nav-menu' style='height:0;'>
+      <li class = 'navlink'><a href='home'>home</a></li>
+      <li class = 'navlink'><a href='projects'>projects</a></li>
+      <li class = 'navlink'><a href='about'>about</a></li>
+    </ul>
+    </nav>
     <div class='header-contents'>
     <a href='#welcome'>
+    <i class='nav' style="display:none; opacity:0;">O</i>
     <div class="svg-container" tabindex="0" >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <g>
@@ -40,11 +49,14 @@
     this.style.height = '100%';
     this.style.marginLeft = '0';
     svgAnimation = document.querySelector('svg');
-    svgAnimation.style.opacity = '0';
+    svgAnimation.classList.add('fadeOut')
     welcomeText = document.querySelector('.welcome');
-    welcomeText.style.opacity = '0';
-    // this.appendChild()
-
+    headercontent = document.querySelector('.header-contents');
+    welcomeText.classList.add('fadeOut')
+    headercontent.classList.add('fadeOut')
+    var nav = document.querySelector('nav');
+    nav.classList.add('fadeIn');
+    // nav.style.
   }, false );
    </script>
 </html>
