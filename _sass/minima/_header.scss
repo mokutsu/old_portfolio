@@ -11,6 +11,7 @@ header {
       width: 70%;
       position: relative;
       margin-left: 15%;
+      transition: transform 300ms ease-in-out;
     // =========== svg ===============
       a {
       .svg-container, .welcome{
@@ -76,60 +77,18 @@ header {
 }
 
 
-.shift-left {
-  width: 30%;
-  height: 100%;
-  // justify-content: left;
-  transition:         width 500ms ease, height 500ms ease, margin-left 500ms ease;
-  -moz-transition:    width 500ms ease, height 500ms ease, margin-left 500ms ease;
-  -ms-transition:     width 500ms ease, height 500ms ease, margin-left 500ms ease;
-  -o-transition:      width 500ms ease, height 500ms ease, margin-left 500ms ease;
-  -webkit-transition: width 500ms ease, height 500ms ease, margin-left 500ms ease;
+.header-contents.shift-left {
+  transform: translate(-30%, 0);
+
 }
 
-@-webkit-keyframes fadeout {
-    0% {opacity:1;}
-    99% {opacity:0;}
-    100% { display: none;}
-}
-@keyframes fadeout {
-    0% {opacity:1;}
-    99% {opacity:0;}
-    100% {width: 0;}
-}
-.fadeOut {
-  opacity:0;
-  -moz-animation   : fadeout 1s linear  forwards;
-  -webkit-animation: fadeout 1s linear  forwards;
-  animation        : fadeout 1s linear  forwards;
-  width: 0;
+.svg-container {
+  transition: opacity 200ms ease-in-out;
 }
 
-@-webkit-keyframes fadeIn {
-    0% {opacity:1;}
-    50% {opacity:0;}
+.welcome {
+  transition: opacity 200ms ease-in-out 200ms;
 }
-@keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-.fadeIn {
-  opacity:1;
-  width: 30%;
-  -moz-animation: fadeIn 2s linear forwards;
-  -webkit-animation: fadeIn 2s linear  forwards;
-  animation        : fadeIn 2s linear  forwards;
-}
-nav {
-  // background-color: pink;
-  height: 100%;
+.fade-out {
   opacity: 0;
-  width: 0;
-  border-right: 1px solid #48d1d8;
-}
-ul.nav-menu{
-  width: 30%;
-  li {
-    list-style: none;
-  }
 }

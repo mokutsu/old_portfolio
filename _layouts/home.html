@@ -8,10 +8,10 @@
   <header>
     <nav>
       <!-- <button> > </button> -->
-      <ul class='nav-menu' style='height:0;'>
+      <!-- <ul class='nav-menu' style='height:0;'>
       <li class = 'navlink'><a href='home'>home</a></li>
       <li class = 'navlink'><a href='projects'>projects</a></li>
-      <li class = 'navlink'><a href='about'>about</a></li>
+      <li class = 'navlink'><a href='about'>about</a></li> -->
     </ul>
     </nav>
     <div class='header-contents'>
@@ -45,18 +45,9 @@
 
     header.addEventListener('click', function(){
    header.classList.add('shift-left');
-    this.style.width = '10%'
-    this.style.height = '100%';
-    this.style.marginLeft = '0';
-    svgAnimation = document.querySelector('svg');
-    svgAnimation.classList.add('fadeOut')
-    welcomeText = document.querySelector('.welcome');
-    headercontent = document.querySelector('.header-contents');
-    welcomeText.classList.add('fadeOut')
-    headercontent.classList.add('fadeOut')
-    var nav = document.querySelector('nav');
-    nav.classList.add('fadeIn');
-    // nav.style.
-  }, false );
+   document.querySelector('.svg-container').classList.add('fade-out');
+   document.querySelector('.welcome').classList.add('fade-out');
+
+ });
    </script>
 </html>
