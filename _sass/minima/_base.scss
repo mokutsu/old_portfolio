@@ -60,3 +60,21 @@ a:hover {
     border-bottom: $teeny_tiny_space solid $darkergrey;
   }
 }
+
+.img-container {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.hero-img {
+  content: "";
+  width: 100%;
+  display: block;
+  filter: saturate(30%) brightness(30%);
+
+}
+.background {
+  z-index: 1;
+}
