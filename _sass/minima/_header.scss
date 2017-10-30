@@ -12,6 +12,14 @@ header {
       position: relative;
       margin-left: 15%;
       transition: transform 300ms ease-in-out;
+      .welcome, .welcome a {
+        margin: 1rem;
+      }
+      .welcome h1 {
+        border-bottom: 0.3rem solid white;
+        margin-bottom: 1rem;
+        padding-bottom: 0.3rem;
+      }
     // =========== svg ===============
       a {
       .svg-container, .welcome{

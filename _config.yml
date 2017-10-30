@@ -15,10 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Misato O.
 email: misato@mokutsu.com
-subtitle: Hi my name is Misato Okutsu and I am a web developer in the Toronto, ON area.
-description: Hi my name is Misato Okutsu and I am a web developer in the Toronto, ON area.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://mokutsu.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mokutsu2
 github_username:  mokutsu
 
