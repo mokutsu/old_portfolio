@@ -1,102 +1,45 @@
 //  ============ HEADER  =========
-header {
-    width: 100vw;
-    height: 100vh;
-    background-color: #222266;
-    display: flex;
-    align-items: center;
-    // justify-content: center;
-    .header-contents {
-      height: 70%;
-      width: 70%;
-      position: relative;
-      margin-left: 15%;
-      transition: transform 300ms ease-in-out;
-      .welcome, .welcome a {
-        margin: 1rem;
-      }
-      .welcome h1 {
-        border-bottom: 0.3rem solid white;
-        margin-bottom: 1rem;
-        padding-bottom: 0.3rem;
-      }
-    // =========== svg ===============
-      a {
-      .svg-container, .welcome{
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .svg-container {
-        border: 1px solid #48d1d8;
-        svg {
-          width:100%;
-          height:100%;
-          stroke: #48d1d8;
-          stroke-width: 0.005rem;
-          .shape {
-            -webkit-animation: 5s draw linear infinite;
-            animation: 5s draw linear infinite;
-          }
-        }
-      }
-      .welcome .welcome-text {
-        font-family: $fancy_fonts;
-        transition: visibility 0s 2s, opacity 2s linear;
-        font-size: $mod_2*$mod_2*$mod_2 *1rem;
-        padding-bottom: 0.1rem;
-      }
-    }
-  }
+.splash {
+    width: 100%;
+    height: 100%;
+
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(20, 175, 181, 0.9),
+      rgba(20, 175, 181, 0.9)
+    ),
+    /* bottom, image */
+    url('img/davisville_midres.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.header-contents:hover {
-  // background-color: green;
-  .svg-container {
-    // background-color: pink;
-    .shape {
-      background-color: pink;
-      -webkit-animation: 90s draw linear infinite;
-      animation: 90s draw linear infinite;
-    }
-  }
-  .welcome-text {
-    padding-bottom: 0;
-    border-bottom: 0.1rem solid white;
-  }
+#about {
+  background:
+    /* top, transparent red, faked with gradient */
+linear-gradient(rgba(127, 20, 181, 0.9), rgba(181, 20, 117, 0.9)), url(img/davisville_midres.jpg) no-repeat center center fixed;
+    /* bottom, image */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-@keyframes draw {
-  0% {
-    stroke-dasharray: 1 16;
-    stroke-dashoffset: 400%;
-    stroke-linecap: round;
-  }
-  100% {
-    stroke-dasharray: 1 16;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-  }
+#contact {
+  background:
+    /* top, transparent red, faked with gradient */
+linear-gradient(rgba(127, 20, 181, 0.9), rgba(181, 20, 117, 0.9)), url(img/davisville_midres.jpg) no-repeat center center fixed;
+    /* bottom, image */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height:100vh;
 }
-
-
-.header-contents.shift-left {
-  transform: translate(-30%, 0);
-
-}
-
-.svg-container {
-  transition: opacity 200ms ease-in-out;
-}
-
-.welcome {
-  transition: opacity 200ms ease-in-out 200ms;
-}
-.fade-out {
-  opacity: 0;
+.about header {
+  display:inline-block;
+  width:70%;
 }

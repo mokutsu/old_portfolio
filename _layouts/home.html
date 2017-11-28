@@ -3,42 +3,80 @@
 
   {% include head.html %}
 
-  <body style="background-color:black;">
+  <body>
+  <section class='splash'>
+
+      <div class='logo'>MO</div>
+
+      <header>
+        <h1 class='heading1'>Hi, I'm Misato.</h1>
+        <p class='tagline'>Toronto-based Web Developer,</p>
+        <p class='tagline'>Thinker, Tinkerer, Crafter.
+        Among other things. </p>
+
+      </header>
+
+      <a class='continue' href='#about'>
+          Let's continue!
+          <span class='down'>V</span>
+      </a>
+  </section>
+
+  <section id='about'>
+
+      <div class='logo'>MO</div>
+
+      <header>
+        <h1 class='heading1'>About</h1>
+
+        <p class='life-story'>
+          I am currently a Full Stack Developer at
+          G Adventures, here in Toronto, Ontario, Canada. I get to work with some really smart people, and ask some really dumb questions, which is always a good time.</p>
+        <p class='life-story'>
+          I've been a developer for about 1-2 years now, mostly working on full stack projects.
+        </p>
+        <p class='life-story'>
+          I've also got around 4 years of experience in engineering consulting under my belt too.  In a previous life, I worked as a Geotechnical Engineer (EIT), mostly for mine tailings projects (and a bit on transportaion infrastructure too).  After I got my degree in Geological Engineering, I also did a bit of environmental engineering, mostly relating to urban industrial contaminated sites.
+</p>
+<p class='life-story'>
+          Outside of coding, I enjoy:
+          <ul>
+            <li>Tinkering / crafting and making stuff like crotcheting, sewing, cooking, etc.</li>
+            <li>Staying active by walking/running, and atively convincing friends to take me hiking with them,</li>
+            <li>and practicing the coolest dance moves at zumba</li>
+          </ul>
+        </p>
+      </header>
+
+      <a class='continue' href='#contact'>
+          Let's continue!
+          <span class='down'>V</span>
+      </a>
+  </section>
+  <section id='contact'>
+  <div class='logo'>MO</div>
 
   <header>
+    <h1 class='heading1'>Contact</h1>
 
-      <img class='hero-img' src='img/davisville_midres-compressor.jpg' alt='background image of davisville ttc tracks'>
-
-      <section style='position:absolute;padding:5rem 5rem;margin:0 auto;width:70%;'>
-        <h1>Misato</h1>
-        <p>Nerd. Web developer. Dabbler. <br>Amongst other things.</p>
-
-        <p class='contactinfo'>
-          <span>Linkedin:</span>
-          <a href='//linkedin.com/in/mokutsu/'>
-            linkedin.com/in/mokutsu/
-          </a>
-        </p>
-        <p class='contactinfo'>
-          <span>Github:</span>
-          <a href='//github.com/mokutsu/'>github.com/mokutsu/
-          </a>
-        </p>
-      </section>
+    <p class='contact'>
+      If you'd like to get in touch, ping me on:
+      <ul>
+        <li class='social'>
+          <span class='social-label'>Twitter:
+          </span>
+          <a href="twitter.com/mokutsu2">@mokutsu2</a>
+        </li>
+        <li class='social'>
+          <span class='social-label'>LinkedIn:
+          </span>
+          <a href="linkedin.com/in/mokutsu">linkedin.com/in/mokutsu</a>
+        </li>
+    </p>
   </header>
-
+  </section>
     <!-- {% include footer.html %} -->
-  </div>
-  </body>
-   <script>
-    // headerbox.classList.add('shift-left');
-  //   const header = document.querySelector('.welcome-text');
-   //
-  //   header.addEventListener('click', function(){
-  //  header.classList.add('shift-left');
-  //  document.querySelector('.svg-container').classList.add('fade-out');
-  //  document.querySelector('.welcome').classList.add('fade-out');
 
- // });
-   </script>
+  </body>
+
 </html>

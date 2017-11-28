@@ -7,18 +7,14 @@
 $base-font-size:   16px;
 $base-font-weight: 400;
 $base-font-family: 'Raleway', 'Roboto', sans-serif;
-$fancy-fonts: 'Megrim', 'Raleway', sans-serif;
+$fancy-fonts: 'Poiret One', 'Raleway', sans-serif;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$text-color:       #fff;
+$background-color: 0f5559;
+$brand-color:      #fbcb5f;
 
 // Width of the content area
 $content-width:    800px;
